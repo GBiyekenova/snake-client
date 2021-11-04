@@ -9,14 +9,20 @@ const connect = () => {
   });
   conn.on("connect", () => {
     console.log("Successfully connected to game server");// code that does something when the connection is first established
-    conn.write("Name: GBK")
+    conn.write("Name: GBK"); 
   });
   conn.on("data", () => {
-    console.log("you ded cuz you idled");// code that does something when the connection is first established
+    console.log("you ded cuz you idled");
   });
   conn.on("close", () => {
-    console.log("closed connection");// code that does something when the connection is first established
+    console.log("closed connection");
   });
+  conn.on("error", () => {
+    console.log("error occured");
+
+
+  });
+
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
